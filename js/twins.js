@@ -1,6 +1,8 @@
 
 // to-do: two animated stick figures to represent the twins being placed in two random positions & places at random every load
 //			css too ofc
+//			quote should be generated on first page load
+//			added very faded actual pictures from their instagram could be good too
 
 var templates = [
 	['n','Can','v'],
