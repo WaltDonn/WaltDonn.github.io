@@ -1,8 +1,5 @@
-
-// to-do: two animated stick figures to represent the twins being placed in two random positions & places at random every load
-//			css too ofc
-//			quote should be generated on first page load
-//			added very faded actual pictures from their instagram could be good too
+//handles keeping track of index of last image
+var lastIndex = 0;
 
 var templates = [
 	['n','Can','v'],
@@ -19,7 +16,7 @@ var templates = [
 	['We','v','n','av'],
 	['n','Of The Day'],
 	['Get ready','n'],
-	['Hit us up on @cameo for a personalised video for you or someone you know.'],
+	['Hit us up on @cameo for a personalised video.'],
 	['The','ad','n'],
 	['Seeing','n'],
 	['n','is our','n'],
@@ -161,6 +158,31 @@ function fillTemplate(templateNum){
 }
 
 function newCaption(){
+
+	//lets first get a random image
+
+  var theImage = document.getElementById('myimage');
+  var imgDir = 'img/';
+  var imgArray = ['cursedDolls.png','bAndR.jpg','mallards.jpg','al1.png','al2.png','al3.png','al4.png', 's1.jpg', 'w1.jpg', 'beastar.jpg', 'mka.jpg', 'zc.jpg', 'tt.png', 'hellokitty.jpg', 'spiderman.jpg', 'mario.png', 'rocket.jpg', 'bert.jpg', 'mirror.jpg', 'al5.png'];
+  var imgIndex = 0;
+  do {
+  	imgIndex = Math.floor(Math.random() * imgArray.length);
+  } while (imgIndex == lastIndex);
+  lastIndex = imgIndex;
+  var imgPath = imgDir + imgArray[imgIndex];
+	theImage.src = imgPath;
+	theImage.alt = imgArray[imgIndex];
+
+	//next, let's get the like count
+	document.getElementById('likeCount').innerHTML = (Math.floor(Math.random() * 2000)+1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+
+	//finally, we can handle the caption!
+
 	var randNum = Math.floor(Math.random() * templates.length);
 	document.getElementById('instaCaption').innerHTML = fillTemplate(randNum);
+}
+
+window.onload = function() {
+  alert("Happy birthday, Sasha! I made this because, as you know, the most identical twins on Earth don't post nearly as often as we would like them to. 'Like' a post to generate a new one!");
+  newCaption();
 }
