@@ -1,0 +1,46 @@
+body {
+    padding-top: 30px;
+    background-color: #fafafa;
+}
+
+#myimage {
+    width: 600px;
+    height: 600px;
+    display: block;
+}
+
+#topimage, #botimage {
+    width: 602px;
+    height: auto;
+    display: block;
+}
+
+#fullMessage {
+    width: 600px;
+    height: auto;
+    text-align:  left;
+    font-family:  'proxima-nova', sans-serif;
+    font-size: 18px;
+    background-color: white;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left-color: #ececec;
+    border-right-color: #ececec;
+    border-bottom-color: #ececec;
+    padding-bottom: 20px;
+}
+
+#messageTitle {
+    padding-left: 15px;
+}
+
+#likes {
+    display:  block;
+    padding-left: 15px;
+    padding-top: 8px;
+}
+
+#messageTitle, #instaCaption, #likeCount {
+    display:  inline-block;
+}
