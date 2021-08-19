@@ -183,6 +183,5 @@ function newCaption(){
 }
 
 window.onload = function() {
-  alert("Happy birthday, Sasha! I made this because, as you know, the most identical twins on Earth don't post nearly as often as we would like them to. 'Like' a post to generate a new one!");
   newCaption();
 }
